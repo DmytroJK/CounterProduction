@@ -20,16 +20,16 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
+            
             dataGridView1.Rows.Clear();   
             DateTime from = dateTimePicker1.Value.Date;
             DateTime to =   dateTimePicker2.Value.Date.AddDays(1);
-            MessageBox.Show(Convert.ToString(from));
             BinaryFormatter formatter = new BinaryFormatter();
             List<Order> orderlist;
             List<Models> modellist;
             string path = @"All information\\Models.dat";
             string path2 = @"All information\\Orders.dat";
+            string size = "";
             double cubes = 0;
             double ZminaACub = 0, ZminaBCub = 0, ZminaCCub = 0, AllCub = 0;
             int All = 0, Count;
@@ -56,10 +56,12 @@ namespace WindowsFormsApplication1
 
                         if (Mod.Name == Ord.Name)
                             cubes = Mod.Cub;
+                            size = Mod.Size;
+                            
 
                     }
                     Count = (Ord.ZminaA + Ord.ZminaB + Ord.ZminaC);
-                    dataGridView1.Rows.Add(Ord.Name, Ord.ZminaA, Ord.ZminaB, Ord.ZminaC, Count, Ord.Date);
+                    dataGridView1.Rows.Add(Ord.Name, Ord.ZminaA, Ord.ZminaB, Ord.ZminaC, Count, Ord.Date, size);
                     ZminaACub += Ord.ZminaA * cubes;
                     ZminaBCub += Ord.ZminaB * cubes;
                     ZminaCCub += Ord.ZminaC * cubes;
@@ -113,6 +115,11 @@ namespace WindowsFormsApplication1
 
             Action.Close();
             file.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

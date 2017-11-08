@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
             Action.Close();
             
 
-            Models model = new Models((textBox1.Text), Math.Round(double.Parse(textBox2.Text), 3));
+            Models model = new Models(textBox1.Text, (Math.Round(double.Parse(textBox2.Text), 3)), textBox3.Text);
    
             using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
             {           

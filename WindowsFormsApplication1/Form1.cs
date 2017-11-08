@@ -47,6 +47,8 @@ namespace WindowsFormsApplication1
                 formatter.Serialize(fs, orderlist);
             }
           Refresh();
+
+            MessageBox.Show(NameF1 + " успішно добавлено");
             
            // textBox2.Clear();
            // textBox4.Clear();
@@ -88,7 +90,7 @@ namespace WindowsFormsApplication1
                 if (!File.Exists(path2))
                 {
 
-                   Models modelexample = new Models("Example", 0);
+                   Models modelexample = new Models("Example", 0, "size");
                    List<Models> modellist = new List<Models>();
                    modellist.Add(modelexample);
                    using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))

@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1
             {
                 orderlist = (List<Order>)formatter.Deserialize(fs2);
             }
+
             foreach (Order Ord in orderlist)
             {
                 dataGridView1.Rows.Add(Ord.Name, Ord.ZminaA,Ord.ZminaB,Ord.ZminaC,Ord.Count,Ord.Date);
