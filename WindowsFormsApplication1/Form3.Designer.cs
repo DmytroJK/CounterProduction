@@ -40,8 +40,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(334, 424);
+            this.button1.Location = new System.Drawing.Point(334, 450);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 41);
             this.button1.TabIndex = 5;
@@ -103,7 +104,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 349);
             this.dataGridView1.TabIndex = 7;
@@ -141,6 +142,11 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 130;
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Розміри";
+            this.Column7.Name = "Column7";
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -149,17 +155,24 @@
             this.comboBox1.Size = new System.Drawing.Size(275, 21);
             this.comboBox1.TabIndex = 8;
             // 
-            // Column7
+            // checkBox1
             // 
-            this.Column7.HeaderText = "Розміри";
-            this.Column7.Name = "Column7";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.Location = new System.Drawing.Point(33, 61);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(96, 23);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Всі моделі";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(849, 477);
+            this.ClientSize = new System.Drawing.Size(849, 503);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -195,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

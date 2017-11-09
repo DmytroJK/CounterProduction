@@ -24,17 +24,12 @@ namespace WindowsFormsApplication1
         {
             BinaryFormatter formatter = new BinaryFormatter();
             List<Models> modellist;
-            Form1 mainform = this.Owner as Form1;
-            mainform.comboBox1.Items.Add(textBox1.Text);
+            Form1 mainform = this.Owner as Form1;   // 1 пункт в зошиті
+       //     mainform.comboBox1.Items.Add(textBox1.Text);
             string path2 = @"All information\\Models.dat";
-            string path3 = @"All information\\Models.txt";
-            
-            StreamWriter Action = new StreamWriter(path3, true);
-            Action.WriteLine(textBox1.Text);
-            Action.Close();
-            
-
             Models model = new Models(textBox1.Text, (Math.Round(double.Parse(textBox2.Text), 3)), textBox3.Text);
+
+            
    
             using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
             {           
@@ -43,10 +38,9 @@ namespace WindowsFormsApplication1
             }
            using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
            {
-           
                formatter.Serialize(fs, modellist);
            }
-            
+            MessageBox.Show("Модель " + textBox1.Text + " добавлено.");
            
             Close();
 

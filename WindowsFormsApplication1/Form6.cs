@@ -31,7 +31,6 @@ namespace WindowsFormsApplication1
             foreach (Models Mod in modellist)
             {
                 dataGridView1.Rows.Add(Mod.Name, Mod.Cub, Mod.Size);
-
             }
         }
 
@@ -56,9 +55,19 @@ namespace WindowsFormsApplication1
             {
                 formatter.Serialize(fs, modellistCH);
             }
+            Close();
 
+       
+        //    this.FormClosing += Form6_FormClosing; // чтоб срабатывал Form1_FormClosing
+      
 
-        }
+    }
+
+       // private void Form6_FormClosing(object sender, FormClosingEventArgs e)
+       // {
+       //     Form1 forma = new Form1();
+       //     forma.Refresh();
+       // }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

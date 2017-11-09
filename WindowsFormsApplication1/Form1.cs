@@ -20,22 +20,35 @@ namespace WindowsFormsApplication1
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            String NameF1;
+        {   
+            String NameF1,Size = "" ;
             int CountF1, ZminaAF1, ZminaBF1, ZminaCF1;
             string path = @"All information\\Orders.dat";
+            string path2 = @"All information\\Models.dat";
             NameF1 =  comboBox1.Text;
             CountF1  = Convert.ToInt32(textBox2.Text);
             ZminaAF1 = int.Parse(textBox4.Text);
             ZminaBF1 = int.Parse(textBox5.Text);
             ZminaCF1 = int.Parse(textBox6.Text);
             DateTime timeF1 = dateTimePicker1.Value;
-            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1);
+
             BinaryFormatter formatter = new BinaryFormatter();
+            List<Models> modellist = new List<Models>();
+
+            using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
+            {
+                modellist  =  (List<Models>)formatter.Deserialize(fs);
+            }
+
+            foreach (Models item in modellist)
+                if (item.Name == NameF1)
+                    Size = item.Size;
+
+
+            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1,Size);
+           
             List<Order> orderlist;
 
-
-               
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
                 orderlist = (List<Order>)formatter.Deserialize(fs);
@@ -78,7 +91,7 @@ namespace WindowsFormsApplication1
                 }
                 if (!File.Exists(path))
                 {                 
-                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22));
+                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22), "");
                   List<Order> orderlist = new List<Order>();
                   orderlist.Add(orderexample);
                
@@ -97,7 +110,7 @@ namespace WindowsFormsApplication1
                    {
                        formatter.Serialize(fs, modellist);
                    }
-
+                   
                 } 
             }
 
@@ -105,17 +118,19 @@ namespace WindowsFormsApplication1
             finally
             {
             }
-            
-           string line;
-           FileStream file = new FileStream("All information\\Models.txt", FileMode.OpenOrCreate);
-           StreamReader Action = new StreamReader(file, Encoding.UTF8);
-           while ((line = Action.ReadLine()) != null)
-           {
-               comboBox1.Items.Add(line);
-           }
-           
-            Action.Close();
-            file.Close();
+
+
+
+            // string line;
+            //   FileStream file = new FileStream("All information\\Models.txt", FileMode.OpenOrCreate);
+            //   StreamReader Action = new StreamReader(file, Encoding.UTF8);
+            //   while ((line = Action.ReadLine()) != null)
+            //   {
+            //       comboBox1.Items.Add(line);
+            //   }
+            //   
+            //    Action.Close();
+            //    file.Close();
 
         }
 
@@ -178,10 +193,10 @@ namespace WindowsFormsApplication1
         {   
             int A,B,C,D;
             if (textBox5.Text == "") { textBox5.Text = "0"; }
-            else;
+
 
             if (textBox6.Text == "") { textBox6.Text = "0"; }
-            else;
+
 
            A = int.Parse(textBox4.Text);
            B = int.Parse(textBox5.Text);
@@ -236,6 +251,24 @@ namespace WindowsFormsApplication1
         {
             Form6 newModel = new Form6();
             newModel.ShowDialog();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            string path2 = @"All information\\Models.dat";
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            List<Models> ModelListStart = new List<Models>();
+
+            using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
+            {
+                ModelListStart = (List<Models>)formatter.Deserialize(fs);
+                foreach (Models item in ModelListStart)
+                {
+                    comboBox1.Items.Add(item.Name);
+                }
+            }
         }
     }
     }
