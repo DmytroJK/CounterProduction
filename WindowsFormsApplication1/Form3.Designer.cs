@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,8 +42,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +87,11 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(334, 450);
+            this.button1.Location = new System.Drawing.Point(176, 450);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 41);
+            this.button1.Size = new System.Drawing.Size(193, 41);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Вивести";
+            this.button1.Text = "Вивести одну модель";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -103,10 +105,11 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 95);
+            this.Column7,
+            this.Column8});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 95);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(804, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(906, 349);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -147,6 +150,11 @@
             this.Column7.HeaderText = "Розміри";
             this.Column7.Name = "Column7";
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Кубатура";
+            this.Column8.Name = "Column8";
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -155,24 +163,25 @@
             this.comboBox1.Size = new System.Drawing.Size(275, 21);
             this.comboBox1.TabIndex = 8;
             // 
-            // checkBox1
+            // button2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(33, 61);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 23);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Всі моделі";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(547, 450);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(176, 41);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Вивести всі моделі";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(849, 503);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(928, 503);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -180,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form3";
@@ -208,6 +218,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Button button2;
     }
 }

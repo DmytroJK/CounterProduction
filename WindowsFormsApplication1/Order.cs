@@ -16,10 +16,11 @@ namespace WindowsFormsApplication1
         public int ZminaC { get; set; }
         public DateTime Date{ get; set; }
         public string Size { get; set; }
+        public double Cubs { get; set; }
 
 
 
-        public Order (String name, int count, int zminaA, int zminaB, int zminaC, DateTime date, string size)
+        public Order (String name, int count, int zminaA, int zminaB, int zminaC, DateTime date, string size, double cubs)
         {
             Name = name;
             Count = count;
@@ -28,6 +29,7 @@ namespace WindowsFormsApplication1
             ZminaC = zminaC;
             Date = date;
             Size = size;
+            Cubs = cubs;
         }
         public Order() { }
     }

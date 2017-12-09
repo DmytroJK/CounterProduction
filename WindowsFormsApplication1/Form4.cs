@@ -69,8 +69,10 @@ namespace WindowsFormsApplication1
           }
 
            Form1 meh= new Form1();
-           meh.ShowDialog();
-           Close();
+            Hide();
+            meh.ShowDialog();
+            
+
         mistake: ;
 
         }

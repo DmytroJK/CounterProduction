@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
         {   
             String NameF1,Size = "" ;
             int CountF1, ZminaAF1, ZminaBF1, ZminaCF1;
+            double Cubs = 0;
             string path = @"All information\\Orders.dat";
             string path2 = @"All information\\Models.dat";
             NameF1 =  comboBox1.Text;
@@ -41,11 +42,12 @@ namespace WindowsFormsApplication1
             }
 
             foreach (Models item in modellist)
-                if (item.Name == NameF1)
+                if (item.Name == NameF1) {
                     Size = item.Size;
+                    Cubs = item.Cub;
+                 }
 
-
-            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1,Size);
+            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1,Size,Cubs);
            
             List<Order> orderlist;
 
@@ -91,7 +93,7 @@ namespace WindowsFormsApplication1
                 }
                 if (!File.Exists(path))
                 {                 
-                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22), "");
+                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22), "", 0);
                   List<Order> orderlist = new List<Order>();
                   orderlist.Add(orderexample);
                
@@ -255,10 +257,24 @@ namespace WindowsFormsApplication1
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
+           
             string path2 = @"All information\\Models.dat";
+            BinaryFormatter formatter = new BinaryFormatter();    
+                
+                if (!File.Exists(path2))
+                {
 
-            BinaryFormatter formatter = new BinaryFormatter();
+                    Models modelexample = new Models("Example", 0, "size");
+                    List<Models> modellist = new List<Models>();
+                    modellist.Add(modelexample);
+                    using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
+                    {
+                        formatter.Serialize(fs, modellist);
+                    }
+
+                }
+                     
+            comboBox1.Items.Clear();
             List<Models> ModelListStart = new List<Models>();
 
             using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
@@ -269,6 +285,11 @@ namespace WindowsFormsApplication1
                     comboBox1.Items.Add(item.Name);
                 }
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
     }

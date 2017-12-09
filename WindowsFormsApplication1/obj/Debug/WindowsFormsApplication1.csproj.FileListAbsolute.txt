@@ -1,7 +1,6 @@
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
