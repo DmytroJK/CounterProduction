@@ -12,3 +12,4 @@ E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\D
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form5.resources
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form6.resources
 E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form7.resources
+E:\MyProjects\CounterProdaction\CounterProdaction\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
