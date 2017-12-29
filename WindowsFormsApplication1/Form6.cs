@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
             }
             foreach (Models Mod in modellist)
             {
-                dataGridView1.Rows.Add(Mod.Name, Mod.Cub, Mod.Size);
+                dataGridView1.Rows.Add(Mod.Name, Mod.Cub);
             }
         }
 
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
                     Models newfuckingmodel = new Models();
                     newfuckingmodel.Name = Convert.ToString(dataGridView1[j, i].Value);
                     newfuckingmodel.Cub = Convert.ToDouble(dataGridView1[j+1, i].Value);
-                    newfuckingmodel.Size = Convert.ToString(dataGridView1[j + 2, i].Value);
+                   
 
                     modellistCH.Add(newfuckingmodel);
                 }

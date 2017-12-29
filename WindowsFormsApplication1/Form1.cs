@@ -20,14 +20,14 @@ namespace WindowsFormsApplication1
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {   
-            String NameF1,Size = "" ;
+        {
+            string NameF1;
             int CountF1, ZminaAF1, ZminaBF1, ZminaCF1;
             double Cubs = 0;
             string path = @"All information\\Orders.dat";
             string path2 = @"All information\\Models.dat";
             NameF1 =  comboBox1.Text;
-            CountF1  = Convert.ToInt32(textBox2.Text);
+            CountF1  = Convert.ToInt32(label6.Text);
             ZminaAF1 = int.Parse(textBox4.Text);
             ZminaBF1 = int.Parse(textBox5.Text);
             ZminaCF1 = int.Parse(textBox6.Text);
@@ -43,11 +43,10 @@ namespace WindowsFormsApplication1
 
             foreach (Models item in modellist)
                 if (item.Name == NameF1) {
-                    Size = item.Size;
-                    Cubs = item.Cub;
+                   Cubs = item.Cub;
                  }
 
-            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1,Size,Cubs);
+            Order NewOrder = new Order(NameF1,CountF1,ZminaAF1,ZminaBF1,ZminaCF1,timeF1);
            
             List<Order> orderlist;
 
@@ -64,12 +63,6 @@ namespace WindowsFormsApplication1
           Refresh();
 
             MessageBox.Show(NameF1 + " успішно добавлено");
-            
-           // textBox2.Clear();
-           // textBox4.Clear();
-           // textBox5.Clear();
-           // textBox6.Clear();
-
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -93,7 +86,7 @@ namespace WindowsFormsApplication1
                 }
                 if (!File.Exists(path))
                 {                 
-                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22), "", 0);
+                  Order orderexample = new Order("Example", 0, 0, 0, 0, new DateTime (1941, 06, 22));
                   List<Order> orderlist = new List<Order>();
                   orderlist.Add(orderexample);
                
@@ -105,7 +98,7 @@ namespace WindowsFormsApplication1
                 if (!File.Exists(path2))
                 {
 
-                   Models modelexample = new Models("Example", 0, "size");
+                   Models modelexample = new Models("Example", 0);
                    List<Models> modellist = new List<Models>();
                    modellist.Add(modelexample);
                    using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))
@@ -204,7 +197,7 @@ namespace WindowsFormsApplication1
            B = int.Parse(textBox5.Text);
            C = int.Parse(textBox6.Text);
            D = A + B + C;
-           textBox2.Text = Convert.ToString(D);  
+           label6.Text = Convert.ToString(D);
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -216,7 +209,7 @@ namespace WindowsFormsApplication1
             B = int.Parse(textBox5.Text);
             C = int.Parse(textBox6.Text);
             D = A + B + C;
-            textBox2.Text = Convert.ToString(D);
+            label6.Text = Convert.ToString(D);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -228,7 +221,7 @@ namespace WindowsFormsApplication1
             B = int.Parse(textBox5.Text);
             C = int.Parse(textBox6.Text);
             D = A + B + C;
-            textBox2.Text = Convert.ToString(D);
+            label6.Text = Convert.ToString(D);
         }
 
         private void textBox5_Click(object sender, EventArgs e)
@@ -264,7 +257,7 @@ namespace WindowsFormsApplication1
                 if (!File.Exists(path2))
                 {
 
-                    Models modelexample = new Models("Example", 0, "size");
+                    Models modelexample = new Models("Example", 0);
                     List<Models> modellist = new List<Models>();
                     modellist.Add(modelexample);
                     using (FileStream fs = new FileStream(path2, FileMode.OpenOrCreate))

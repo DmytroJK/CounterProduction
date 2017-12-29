@@ -7,13 +7,13 @@ namespace WindowsFormsApplication1
     {
         public string Name { get; set; }
         public double Cub { get; set; }
-        public string Size { get; set; }
+//        public string Size { get; set; }
 
-        public Models (string name, double cub, string size)
+        public Models (string name, double cub)
         {
             Name = name;
             Cub = cub;
-            Size = size;
+//            Size = size;
         }
         public Models() { }
     }

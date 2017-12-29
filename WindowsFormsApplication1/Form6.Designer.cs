@@ -32,7 +32,6 @@
             this.NameModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cubs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +40,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameModel,
-            this.Cubs,
-            this.Column1});
+            this.Cubs});
             this.dataGridView1.Location = new System.Drawing.Point(14, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(348, 318);
+            this.dataGridView1.Size = new System.Drawing.Size(275, 318);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -61,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(120, 336);
+            this.button1.Location = new System.Drawing.Point(87, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 35);
             this.button1.TabIndex = 1;
@@ -69,16 +67,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Розміри";
-            this.Column1.Name = "Column1";
-            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 385);
+            this.ClientSize = new System.Drawing.Size(301, 385);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -99,6 +92,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameModel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cubs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

@@ -33,7 +33,6 @@
             this.добавитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заДеньToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заВесьЧасToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,13 +93,6 @@
             this.заВесьЧасToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.заВесьЧасToolStripMenuItem.Text = "Звіт за місяць";
             this.заВесьЧасToolStripMenuItem.Click += new System.EventHandler(this.заВесьЧасToolStripMenuItem_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(164, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
             // 
             // textBox4
             // 
@@ -223,6 +216,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(160, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 18);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +233,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(465, 269);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox1);
@@ -242,7 +246,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -265,7 +268,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem заВесьЧасToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label2;
@@ -280,6 +282,7 @@
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
     }
 }
 
